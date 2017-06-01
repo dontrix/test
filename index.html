@@ -1,40 +1,46 @@
 <html>
   <head><link rel="stylesheet" type="text/css" href="main.css"></head>
 <body>
-<script type="text/javascript" src="http://www.cpagrip.com/script_include.php?id=2193">
-  function move() {
-    var elem = document.getElementById("myBar"); 
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-        } else {
-            width++; 
-            elem.style.width = width + '%'; 
-        }
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
     }
+  }
 }
-Try it Yourself »
-
-  
 </script>
-  <div id="myProgress">
-  <div id="myBar"></div>
+
+<div id="myProgress">
+  <div id="myBar">10%</div>
 </div>
+</div>
+ <br>
+<button onclick="move()">Click Me</button>
 <style>
 html { 
   background:  url(https://i.imgur.com/Wf71lbG.gif) no-repeat center center fixed; 
   background-size: cover;
 }
 #myProgress {
-    width: 100%;
-    background-color: grey;
+  width: 100%;
+  background-color: #ddd;
 }
+
 #myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
 }
 </style>
 </body>
